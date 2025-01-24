@@ -1,0 +1,46 @@
+const counters = document.querySelectorAll(".counters span");
+const container = document.querySelector(".counters");
+
+let activated = false;
+
+window .addEventListener("scroll", () => {
+    if (
+        pageXOffset > container.offsetTop - container.offsetHight-200 
+        && activated === false) {
+    ) {
+
+            counters.forEach(count => {
+
+                counter.innerText=0;
+
+                let count=0;
+
+                function updateCount(){
+
+                    const target = parseInt(count.dataset.count);
+
+                    if(count<target) {
+                        count++;
+                        counter.innerText = count;
+                        setTimeout(updateCount, 10);
+                    }else{
+                        counter.innerText = target;
+                    }
+                }
+                updateCount();
+                
+                activate = true;
+            });
+
+        }else if(
+            pageYOffset < container.offsetTop - container.offsetHight - 500
+            || pageYOffset ===0
+            && activated ===true
+        ){
+            counters.forEach(count => {
+                count.innerText = 0;
+        });
+
+        activated = false;
+     }
+    });
