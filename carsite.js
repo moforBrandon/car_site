@@ -45,12 +45,19 @@ ScrollReveal().reveal(".price_card", {
     interval: 500,
 });
 
-//swipe effect not working
-const swiper = new Swiper(".swiper", {
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-    },
+// //swipe effect not working
+document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper(".swiper", {
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 });
 
 //counter
